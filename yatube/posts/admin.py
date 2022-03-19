@@ -3,9 +3,11 @@ from django.contrib import admin
 from .models import Group
 from .models import Post
 
+
 @admin.register(Group)
 class GroupAdmin (admin.ModelAdmin):
     list_display = ('title', 'slug', 'description')
+
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -20,6 +22,3 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ('text',)
     list_filter = ('pub_date', 'group',)
     empty_value_display = '-пусто-'
-
-
-

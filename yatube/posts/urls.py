@@ -1,5 +1,6 @@
 from django.urls import path
-
+# Я правильно понял, что в импортах проблемой было то, что их нужно 
+# было разделить на группы?
 from . import views
 
 app_name = 'posts'

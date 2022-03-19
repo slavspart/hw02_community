@@ -5,7 +5,7 @@ User = get_user_model()
 
 
 class Group (models.Model):
-    title = models.CharField('Название группы',max_length=200)
+    title = models.CharField('Название группы', max_length=200)
     slug = models.SlugField('Адрес', unique=True)
     description = models.TextField('Описание')
 
@@ -27,7 +27,7 @@ class Post(models.Model):
     )
     group = models.ForeignKey(
         Group,
-        blank=True,  
+        blank=True,
         null=True,
         on_delete=models.PROTECT,
         related_name='group_posts',
@@ -35,5 +35,6 @@ class Post(models.Model):
     )
 
     class Meta:
-        verbose_name_plural='Публикации'
-        ordering=['-pub_date']
+        verbose_name_plural = 'Публикации'
+        ordering = ['-pub_date']
+        
